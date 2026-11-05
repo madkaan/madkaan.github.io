@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>泰剧网-泰剧推荐_泰剧在线观看_泰国电视剧_泰剧大全</title>
+<meta name="description" content="泰剧网整理泰国电视剧的题材分类、剧集资料与观看方式，涵盖爱情、悬疑、古装、BL等类型，提供泰剧推荐、演员信息、选剧思路与观看注意事项，帮助你快速找到想看的泰剧并了解剧集背景。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c0392b'/%3E%3Cpath d='M20 44V20l24 12-24 12z' fill='%23f9e79f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#241a15;
+  --ink-soft:#5a4a42;
+  --paper:#fdf7f1;
+  --paper-2:#f6e9de;
+  --line:#e2cdbd;
+  --accent:#b5341f;
+  --accent-2:#8a2314;
+  --gold:#c99a2e;
+  --teal:#2f6d63;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.wrap{width:min(1120px,92%);margin:0 auto;}
+
+/* 顶部 */
+.site-head{
+  background:linear-gradient(120deg,#2a1a12 0%,#4a2417 55%,#7a2f1c 100%);
+  color:#f7e9dc;
+  border-bottom:4px solid var(--gold);
+}
+.head-inner{
+  display:flex;flex-wrap:wrap;gap:18px;
+  align-items:center;justify-content:space-between;
+  padding:18px 0;
+}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-mark{
+  width:44px;height:44px;flex:0 0 44px;
+  background:var(--gold);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:#3a1d10;font-weight:800;font-size:20px;
+}
+.logo-text b{display:block;font-size:21px;letter-spacing:1px;color:#fff2e2;}
+.logo-text span{font-size:12px;color:#e8c9a8;letter-spacing:2px;}
+.main-nav{display:flex;flex-wrap:wrap;gap:6px;}
+.main-nav a{
+  color:#f3ddc8;font-size:14px;padding:6px 12px;
+  border-radius:20px;border:1px solid rgba(243,221,200,.28);
+}
+.main-nav a:hover{background:rgba(243,221,200,.14);text-decoration:none;}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(circle at 88% 12%, rgba(201,154,46,.22), transparent 42%),
+    var(--paper-2);
+  border-bottom:1px solid var(--line);
+  padding:44px 0 40px;
+}
+.hero-grid{display:grid;grid-template-columns:1.5fr .9fr;gap:36px;align-items:start;}
+.kicker{
+  display:inline-block;font-size:13px;letter-spacing:2px;
+  color:var(--accent-2);background:#fff;border:1px solid var(--line);
+  padding:4px 12px;border-radius:4px;margin-bottom:16px;
+}
+h1{
+  font-size:clamp(26px,4vw,40px);
+  line-height:1.3;margin:0 0 14px;color:#33190f;
+  letter-spacing:.5px;
+}
+.tagline{
+  font-size:17px;color:var(--teal);font-weight:600;
+  margin:0 0 18px;padding-left:14px;border-left:4px solid var(--teal);
+}
+.hero p.lead{color:var(--ink-soft);margin:0 0 20px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.btn{
+  display:inline-block;padding:11px 22px;border-radius:6px;
+  font-size:15px;font-weight:600;
+}
+.btn-main{background:var(--accent);color:#fff;}
+.btn-main:hover{background:var(--accent-2);text-decoration:none;}
+.btn-ghost{border:1px solid var(--accent);color:var(--accent);}
+.btn-ghost:hover{background:#fff;text-decoration:none;}
+
+.hero-side{
+  background:#fff;border:1px solid var(--line);border-radius:10px;
+  padding:20px 22px;box-shadow:0 8px 22px rgba(90,50,30,.07);
+}
+.hero-side h2{
+  font-size:16px;margin:0 0 12px;color:var(--accent-2);
+  border-bottom:1px dashed var(--line);padding-bottom:8px;
+}
+.hero-side ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:14.5px;}
+.hero-side li{margin-bottom:8px;}
+
+/* 通用区块 */
+section.block{padding:44px 0;border-bottom:1px solid var(--line);}
+section.block:nth-of-type(even){background:#fffaf5;}
+.block-head{margin-bottom:24px;}
+.block-head h2{
+  font-size:23px;margin:0 0 8px;color:#33190f;
+  display:flex;align-items:center;gap:10px;
+}
+.block-head h2::before{
+  content:"";width:6px;height:22px;background:var(--gold);
+  border-radius:3px;display:inline-block;
+}
+.block-head p{margin:0;color:var(--ink-soft);font-size:15px;max-width:820px;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.prose p{margin:0 0 14px;color:#3d2c24;}
+.prose p:last-child{margin-bottom:0;}
+
+ul.ticks{list-style:none;padding:0;margin:16px 0 0;}
+ul.ticks li{
+  position:relative;padding-left:24px;margin-bottom:9px;color:#3d2c24;font-size:15px;
+}
+ul.ticks li::before{
+  content:"◆";position:absolute;left:0;top:0;color:var(--accent);font-size:11px;
+}
+
+/* 题材分类 */
+.genre-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.genre{
+  background:#fff;border:1px solid var(--line);border-left:5px solid var(--accent);
+  border-radius:8px;padding:16px 18px;
+}
+.genre h3{margin:0 0 6px;font-size:16.5px;color:var(--accent-2);}
+.genre p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+.genre:nth-child(2){border-left-color:var(--teal);}
+.genre:nth-child(2) h3{color:var(--teal);}
+.genre:nth-child(3){border-left-color:var(--gold);}
+.genre:nth-child(3) h3{color:#946f14;}
+.genre:nth-child(4){border-left-color:#6b4a8a;}
+.genre:nth-child(4) h3{color:#6b4a8a;}
+.genre:nth-child(5){border-left-color:#b06a2c;}
+.genre:nth-child(5) h3{color:#b06a2c;}
+.genre:nth-child(6){border-left-color:#3a6ea5;}
+.genre:nth-child(6) h3{color:#3a6ea5;}
+
+/* 选剧步骤 */
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.step{
+  background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:18px 20px 18px 62px;position:relative;
+}
+.step::before{
+  counter-increment:step;content:counter(step);
+  position:absolute;left:18px;top:18px;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--teal);color:#fff;font-weight:700;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+}
+.step h3{margin:0 0 6px;font-size:16px;color:#2e1a11;}
+.step p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+/* 剧集资料表 */
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fff;}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:14.5px;}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid #f0e0d3;}
+th{background:var(--paper-2);color:#5a2a18;font-weight:700;white-space:nowrap;}
+tr:last-child td{border-bottom:none;}
+td.note{color:var(--ink-soft);}
+
+/* 观看说明 */
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.tip{
+  background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;
+}
+.tip h3{margin:0 0 8px;font-size:16px;color:var(--accent-2);}
+.tip p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+/* FAQ */
+.faq-list{max-width:900px;}
+.faq-item{
+  background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:16px 20px;margin-bottom:14px;
+}
+.faq-item h3{margin:0 0 8px;font-size:16px;color:#33190f;}
+.faq-item p{margin:0;font-size:15px;color:var(--ink-soft);}
+
+/* CTA */
+.cta-band{
+  background:linear-gradient(120deg,#4a2417,#8a2314);
+  color:#faeee2;padding:42px 0;text-align:center;
+}
+.cta-band h2{margin:0 0 10px;font-size:24px;color:#fff6ea;}
+.cta-band p{margin:0 auto 22px;max-width:680px;color:#f0d6c2;font-size:15.5px;}
+.cta-band a.btn-main{background:var(--gold);color:#3a1d10;}
+.cta-band a.btn-main:hover{background:#dfae3c;}
+
+/* 页脚 */
+.site-foot{
+  background:#241a15;color:#cbb5a5;padding:34px 0 26px;font-size:14px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px;}
+.site-foot h4{margin:0 0 10px;color:#f0dcc9;font-size:15px;}
+.site-foot p{margin:0 0 8px;line-height:1.8;}
+.site-foot ul{list-style:none;padding:0;margin:0;}
+.site-foot li{margin-bottom:7px;}
+.site-foot a{color:#e3b98f;}
+.foot-bottom{
+  margin-top:24px;padding-top:16px;border-top:1px solid #3d2c22;
+  font-size:13px;color:#9d8574;text-align:center;
+}
+
+/* 响应式 */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .genre-list{grid-template-columns:repeat(2,1fr);}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  .head-inner{padding:14px 0;}
+  .main-nav a{padding:5px 10px;font-size:13px;}
+  h1{font-size:26px;}
+  .tagline{font-size:15.5px;}
+  .two-col,.steps,.tips-grid,.genre-list{grid-template-columns:1fr;}
+  section.block{padding:32px 0;}
+  .block-head h2{font-size:20px;}
+  .foot-grid{grid-template-columns:1fr;}
+  .cta-band h2{font-size:20px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <div class="logo">
+      <div class="logo-mark">泰</div>
+      <div class="logo-text">
+        <b>泰剧网</b>
+        <span>THAI DRAMA GUIDE</span>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#genres">题材分类</a>
+      <a href="#choose">选剧方法</a>
+      <a href="#data">剧集资料</a>
+      <a href="#watch">观看说明</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">题材分类 · 剧集资料 · 选剧参考</span>
+        <h1>泰剧网：泰剧题材分类与剧集资料一站查阅</h1>
+        <p class="tagline">按题材、年份与演员查找泰剧，先了解剧情类型与观看方式，再决定追哪一部。</p>
+        <p class="lead">很多人第一次接触泰剧，会先被演员、剧名或片段吸引，却不确定它属于哪种类型、适合什么口味。泰剧网围绕泰国电视剧的常见题材、剧集信息与观看渠道整理内容，把爱情、悬疑、校园、古装、家庭伦理、BL等方向分开说明，帮助你在打开播放页面之前，先弄清楚这部剧大概讲什么、节奏如何、适合谁看。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#genres">查看题材分类</a>
+          <a class="btn btn-ghost" href="#choose">学习选剧方法</a>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <h2>本站能帮你做什么</h2>
+        <ul>
+          <li>梳理泰剧常见题材与各自的内容特点</li>
+          <li>说明如何根据演员、年份、口碑挑选剧集</li>
+          <li>整理剧集资料应关注哪些字段，避免看错版本</li>
+          <li>提示观看渠道、字幕、区域限制与版权注意点</li>
+          <li>回答初看泰剧时常遇到的疑问</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block" id="genres">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>泰剧常见题材分类</h2>
+        <p>泰国电视剧题材跨度很大，同一部剧往往同时带有爱情、喜剧或家庭元素。先按主类型归类，再看副标签，能更准确地判断是否符合自己的口味。</p>
+      </div>
+      <div class="genre-list">
+        <article class="genre">
+          <h3>都市爱情</h3>
+          <p>以男女主情感推进为主线，常搭配职场、豪门或身份差设定。剧情节奏多为甜虐交替，适合喜欢强情感线的观众。</p>
+        </article>
+        <article class="genre">
+          <h3>悬疑惊悚</h3>
+          <p>围绕案件、复仇或超自然事件展开，线索层层推进。适合喜欢推理和反转的观众，观看时建议留意每集结尾的伏笔。</p>
+        </article>
+        <article class="genre">
+          <h3>校园青春</h3>
+          <p>以学生时代的友情、成长与初恋为核心，氛围轻快。多数篇幅不长，适合作为入门泰国电视剧的第一选择。</p>
+        </article>
+        <article class="genre">
+          <h3>古装年代</h3>
+          <p>包含历史背景、宫廷或家族故事，服化道是重要看点。人物关系较复杂，前期建议先看人物简介再进入正片。</p>
+        </article>
+        <article class="genre">
+          <h3>家庭伦理</h3>
+          <p>聚焦代际矛盾、婚姻关系与家族利益，冲突密集。适合喜欢生活化叙事和群像戏的观众，节奏通常偏长。</p>
+        </article>
+        <article class="genre">
+          <h3>BL与群像</h3>
+          <p>近年泰剧的重要类型，包含校园、都市等不同背景。选剧时可关注主演搭配、原著来源和结局走向再决定是否追看。</p>
+        </article>
+      </div>
+
+      <div class="two-col" style="margin-top:30px;">
+        <div class="prose">
+          <p>题材分类只是第一步。很多观众在泰剧网查找时会发现，同一部作品在不同渠道被贴上不同标签，例如既有“爱情”又有“奇幻”，这并不矛盾，而是因为泰国电视剧习惯把多条线索交织在一起。阅读分类时，建议先确认主类型，再参考副标签，避免因为单一标签错过或误判一部剧。</p>
+          <p>此外，题材与集数、单集时长也有关系。悬疑剧常靠信息密度取胜，家庭伦理剧则更依赖人物关系铺陈。了解这一点，能帮你在有限的追剧时间里做出更合适的选择。</p>
+        </div>
+        <div class="prose">
+          <p>如果你还没有明确的偏好，可以先从校园青春或轻喜剧入手，这类作品人物关系相对简单，字幕负担也较轻。等熟悉了泰国电视剧的叙事节奏和表演风格，再挑战古装或悬疑类型，会更容易进入剧情。</p>
+          <p>分类页面不替代播放服务，它解决的是“这部剧大概是什么类型、值不值得花时间”的问题。真正观看时，仍需要到具备相应授权的渠道确认资源是否可用。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="choose">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>挑选泰国电视剧的四个步骤</h2>
+        <p>面对数量众多的剧集，按固定顺序筛选可以显著减少试错成本。下面这套方法适用于大多数初次接触泰剧的观众。</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <h3>先确定类型偏好</h3>
+          <p>从爱情、悬疑、校园、古装中选一个主方向，再考虑是否接受副标签，例如“爱情+喜剧”或“悬疑+超自然”。</p>
+        </article>
+        <article class="step">
+          <h3>核对剧集基本信息</h3>
+          <p>确认年份、集数、单集时长和主演，避免把翻拍版与原版混淆，也便于判断自己是否有时间追完。</p>
+        </article>
+        <article class="step">
+          <h3>查看剧情简介与演员</h3>
+          <p>简介能反映主线走向，主演阵容则影响观感。若对某位演员感兴趣，可顺带查看其其他代表作。</p>
+        </article>
+        <article class="step">
+          <h3>确认观看渠道</h3>
+          <p>在正规平台核对资源是否上线、字幕是否完整、是否需要会员，再决定何时开始观看。</p>
+        </article>
+      </div>
+
+      <div class="two-col" style="margin-top:30px;">
+        <div class="prose">
+          <p>筛选泰剧时，年份常常被忽略，但它直接影响画风、拍摄技术和叙事节奏。较早的泰国电视剧在配乐和转场上与近年作品差别明显，如果你习惯现代剧的节奏，可以优先从近几年的作品看起。</p>
+          <p>主演也是重要线索。泰剧网在整理资料时会把主演与角色对应列出，方便你判断角色戏份分布。有些作品宣传时主打某位演员，实际出场时间却有限，提前了解可以减少心理落差。</p>
+        </div>
+        <div class="prose">
+          <p>另一个实用技巧是先看结局类型。部分观众无法接受开放式结局或悲剧收尾，而剧集简介通常不会直接说明。可以通过剧评、讨论区或分集简介提前确认，避免追到最后才发现不符合预期。</p>
+          <p>如果时间有限，不妨选择集数较少、单集节奏紧凑的作品。泰国电视剧既有十几集的短篇，也有篇幅较长的家庭剧，按自己的时间安排选择，比盲目跟风更实际。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="data">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>剧集资料应包含哪些信息</h2>
+        <p>一份清晰的泰剧资料，能让你在不打开视频的情况下判断这部剧是否符合需求。下表列出了常见的字段及其作用，可作为查阅时的参考。</p>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>字段</th>
+              <th>作用</th>
+              <th>查阅提示</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>剧名与原名</td>
+              <td>区分中文译名、英文名和泰文原名，避免同名混淆</td>
+              <td class="note">不同渠道译名可能不同，建议以原名核对</td>
+            </tr>
+            <tr>
+              <td>年份与集数</td>
+              <td>判断作品新旧、篇幅长短与追剧成本</td>
+              <td class="note">注意翻拍版与原版的年份差异</td>
+            </tr>
+            <tr>
+              <td>主演与角色</td>
+              <td>了解演员阵容和角色关系</td>
+              <td class="note">配角信息有助于判断群像戏比重</td>
+            </tr>
+            <tr>
+              <td>题材标签</td>
+              <td>快速定位内容方向</td>
+              <td class="note">主类型优先，副标签作为补充</td>
+            </tr>
+            <tr>
+              <td>剧情简介</td>
+              <td>概括主线冲突与故事背景</td>
+              <td class="note">简介通常不剧透关键反转</td>
+            </tr>
+            <tr>
+              <td>播出与观看渠道</td>
+              <td>确认资源是否可获取</td>
+              <td class="note">以平台实际显示为准，注意区域限制</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="two-col" style="margin-top:30px;">
+        <div class="prose">
+          <p>整理泰剧资料时，最容易被忽略的是译名差异。同一部泰国电视剧，在不同平台可能使用完全不同的中文名，甚至出现简称、别称混用的情况。通过原名或主演信息交叉核对，可以大幅降低找错剧的概率。</p>
+          <p>集数信息同样值得留意。部分作品在电视台播出时与网络版集数不一致，单集时长也可能调整。查阅剧集资料时，看到集数对不上不必急于下结论，先确认版本来源更稳妥。</p>
+        </div>
+        <div class="prose">
+          <p>剧情简介的写法也会影响判断。有些简介侧重情感线，有些侧重悬疑线索，读起来像两部不同的剧。遇到这种情况，可以结合题材标签和演员信息综合判断，而不是只看一段文字。</p>
+          <p>对于尚未上线或资料不全的作品，泰剧网会以“内容整理中”的方式标注，避免给出不确定的信息。看到这类标注时，说明相关剧集资料仍在补充，建议稍后再查阅。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="watch">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>观看泰剧的注意事项</h2>
+        <p>泰剧的观看体验不仅取决于剧情，也与字幕、配音、播放渠道和区域限制有关。提前了解这些细节，可以减少中途弃剧的挫败感。</p>
+      </div>
+      <div class="tips-grid">
+        <article class="tip">
+          <h3>字幕质量</h3>
+          <p>机翻字幕容易丢失语气和双关，影响理解人物关系。优先选择人工翻译或平台官方字幕，观看前可先试看几分钟判断。</p>
+        </article>
+        <article class="tip">
+          <h3>配音与原声</h3>
+          <p>部分渠道提供国语配音，适合不习惯看字幕的观众；但配音可能弱化原声表演细节，可根据个人习惯选择。</p>
+        </article>
+        <article class="tip">
+          <h3>区域与版权</h3>
+          <p>不同地区的上线情况存在差异，能否观看以平台实际提示为准。遇到无法播放时，先确认是否属于区域限制而非设备问题。</p>
+        </article>
+        <article class="tip">
+          <h3>版本与剪辑</h3>
+          <p>同一部泰剧可能存在电视台版与网络版，剪辑和时长不同。讨论剧情时先确认彼此观看的版本，能避免不必要的误会。</p>
+        </article>
+        <article class="tip">
+          <h3>更新节奏</h3>
+          <p>连载中的作品需要按平台更新安排追看。若不想等待，可选择已完结剧集，一次性看完更连贯。</p>
+        </article>
+        <article class="tip">
+          <h3>内容适配</h3>
+          <p>部分泰剧涉及惊悚、暴力或复杂家庭关系，观看前可参考题材标签和分级提示，按自己的接受程度选择。</p>
+        </article>
+      </div>
+
+      <div class="prose" style="margin-top:28px;max-width:900px;">
+        <p>需要说明的是，泰剧网提供的是题材分类、剧集资料与选剧参考，不直接存储或分发影视文件。具体能否观看、以何种方式观看，取决于你使用的平台是否拥有相应授权。尊重版权、通过正规渠道观看，是获得稳定画质和完整字幕的前提。</p>
+        <p>如果你在查找某部泰国电视剧时发现资料缺失，可以先记录剧名原名或主演姓名，再通过多个渠道交叉核对。相比只依赖单一译名，这种方式更容易找到准确信息，也更适合长期追剧的观众。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>关于泰剧网的常见问题</h2>
+        <p>以下问题来自初次接触泰剧的观众最常遇到的困惑，回答尽量保持中性、可核实。</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>泰剧网提供在线播放吗？</h3>
+          <p>本站主要整理泰国电视剧的题材分类、剧集资料和选剧参考，不直接提供影视文件存储或播放服务。具体观看请以具备相应授权的平台为准。</p>
+        </div>
+        <div class="faq-item">
+          <h3>同一部泰剧为什么有多个中文名？</h3>
+          <p>不同平台和字幕组在翻译时可能采用不同译法，导致中文名不一致。核对泰文原名、英文名或主演信息，是确认是否为同一部作品的有效方式。</p>
+        </div>
+        <div class="faq-item">
+          <h3>怎样判断一部泰剧是否适合自己？</h3>
+          <p>可以先看主类型是否符合偏好，再核对年份、集数和主演，最后阅读剧情简介。若对结局敏感，建议提前了解结局走向再决定是否追看。</p>
+        </div>
+        <div class="faq-item">
+          <h3>泰剧的集数一般是多少？</h3>
+          <p>没有统一标准，短篇作品可能只有十几集，家庭伦理类作品篇幅往往更长，单集时长也可能因电视台版和网络版而不同。查阅时以具体剧集资料为准。</p>
+        </div>
+        <div class="faq-item">
+          <h3>找不到某部泰剧的资料怎么办？</h3>
+          <p>可以尝试用原名、主演姓名或年份组合查找，并留意不同译名。若资料仍不完整，说明相关内容可能仍在整理中，建议稍后再查阅。</p>
+        </div>
+        <div class="faq-item">
+          <h3>观看泰剧需要注意什么？</h3>
+          <p>重点关注字幕质量、配音版本、区域限制和版本差异。通过正规渠道观看，既能保证画质和字幕完整，也有助于尊重创作者的版权。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>从题材出发，找到下一部想看的泰剧</h2>
+      <p>先确定喜欢的类型，再核对剧集资料与观看渠道。泰剧网会持续整理泰国电视剧的分类与信息，帮助你把追剧时间花在真正感兴趣的作品上。</p>
+      <a class="btn btn-main" href="#genres">回到题材分类</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>关于泰剧网</h4>
+        <p>泰剧网是一个围绕泰国电视剧的题材分类与剧集资料整理页面，内容涵盖爱情、悬疑、校园、古装、家庭伦理与BL等方向，帮助访问者了解剧集类型、筛选方法与观看注意事项。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#genres">泰剧题材分类</a></li>
+          <li><a href="#choose">挑选泰剧的方法</a></li>
+          <li><a href="#data">剧集资料字段说明</a></li>
+          <li><a href="#watch">观看注意事项</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <ul>
+          <li>剧集信息以平台实际显示为准</li>
+          <li>观看请选择具备授权的渠道</li>
+          <li>资料不全的作品会标注整理中</li>
+          <li>译名差异可通过原名核对</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      泰剧网 · 泰国电视剧题材分类与剧集资料整理，仅供查阅与选剧参考。
+    </div>
+  </div>
+</footer>
+
+</body>
+          </html>
